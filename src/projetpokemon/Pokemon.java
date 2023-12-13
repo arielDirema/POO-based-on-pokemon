@@ -39,6 +39,29 @@ public abstract class Pokemon {
         return (this.hp == 0);
     }
     
-    //METHODE ATTAQUER
-    public abstract void attaquer();
+    //METHODE AFFICHER
+    public void afficher(){
+        System.out.println("Nom : " + this.nom + "\nHealth Point : " + this.hp + "\nPoint d'attaque : " + this.atk);
+    }
+    
+    //IMPLEMENTATION DES METHODES ATTAQUER AVEC SURCHARGE
+    //ATTAQUER UN POKEMON_NORMAL
+    public void attaquer(Pokemon poke) {
+        poke.hp -= this.atk * 0.5;
+    }
+    
+    //ATTAQUER UN POKEMON_FEU
+    public void attaquer(PokemonFeu pokeFeu) {
+        pokeFeu.hp -= this.atk;
+    }
+    
+    //ATTAQUER UN POKEMON_EAU
+    public void attaquer(PokemonEau pokeEau) {
+        pokeEau.hp -= this.atk;
+    }
+    
+    //ATTAQUER UN POKEMON_PLANTE
+    public void attaquer(PokemonPlante pokePlante) {
+        pokePlante.hp -= this.atk;
+    }
 }
