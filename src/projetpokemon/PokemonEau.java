@@ -13,7 +13,7 @@ public class PokemonEau extends Pokemon{
     public PokemonEau(){
         
     }
-    public PokemonEau(String _nom, int _hp, int _atk){
+    public PokemonEau(String _nom, double _hp, double _atk){
         super(_nom, _hp, _atk);
     }
 

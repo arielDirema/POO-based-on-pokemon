@@ -28,8 +28,8 @@ public class ProjetPokemon {
         PokemonPlante decidueye = new PokemonPlante("Decidueye", 107, 10);
 
         //CREATION DE 2 POKEMON DE TYPE GENERAL
-        //Pokemon pikachu = new Pokemon("Pikachu", 150, 85);
-        //Pokemon flambuzard = new Pokemon("Flambuzard", 104, 80);
+        Pokemon pikachu = new Pokemon("Pikachu", 150, 85);
+        Pokemon flambuzard = new Pokemon("Flambuzard", 104, 80);
 
         //System.out.println(charizard.getNom());
         System.out.print("\n\n");
@@ -53,6 +53,13 @@ public class ProjetPokemon {
         gyarados.afficher();
         System.out.println(" ");
         swampert.afficher();
+        System.out.println(" ");
+
+        System.out.println("------POKEMONS DE TYPE GENERAL------");
+        System.out.println(" ");
+        pikachu.afficher();
+        System.out.println(" ");
+        flambuzard.afficher();
         System.out.println(" ");
 
         //PROCEDER A UNE ATTAQUE

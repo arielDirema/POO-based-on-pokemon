@@ -13,7 +13,7 @@ public class PokemonPlante extends Pokemon{
     public PokemonPlante(){
         
     }
-    public PokemonPlante(String _nom, int _hp, int _atk){
+    public PokemonPlante(String _nom, double _hp, double _atk){
         super(_nom, _hp, _atk);
     }
     

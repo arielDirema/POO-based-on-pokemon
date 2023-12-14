@@ -8,16 +8,16 @@ package projetpokemon;
  *
  * @author hp
  */
-public abstract class Pokemon {
+public class Pokemon {
     protected String nom;
-    protected int hp; //Health Points
-    protected int atk; //Attack points
+    protected double hp; //Health Points
+    protected double atk; //Attack points
     
     //CONSTRUCTEURS
     public Pokemon(){
         
     }
-    public Pokemon(String _nom, int _hp, int _atk){
+    public Pokemon(String _nom, double _hp, double _atk){
         this.nom = _nom;
         this.hp = _hp;
         this.atk = _atk;
@@ -27,10 +27,10 @@ public abstract class Pokemon {
     public String getNom(){
         return this.nom;
     }
-    public int getHp(){
+    public double getHp(){
         return this.hp;
     }
-    public int getAtk(){
+    public double getAtk(){
         return this.atk;
     }
 
@@ -38,10 +38,10 @@ public abstract class Pokemon {
     public void setNom(String _nom){
         this.nom = _nom;
     }
-    public void setHp(int _hp){
+    public void setHp(double _hp){
         this.hp = _hp;
     }
-    public void setAtk(int _atk){
+    public void setAtk(double _atk){
         this.atk = _atk;
     }
     
