@@ -33,35 +33,58 @@ public abstract class Pokemon {
     public int getAtk(){
         return this.atk;
     }
+
+    //SETTERS
+    public void setNom(String _nom){
+        this.nom = _nom;
+    }
+    public void setHp(int _hp){
+        this.hp = _hp;
+    }
+    public void setAtk(int _atk){
+        this.atk = _atk;
+    }
     
     //METHODE IS_DEAD
     public boolean isDead(){
-        return (this.hp == 0);
+        return (this.hp <= 0);
     }
     
     //METHODE AFFICHER
     public void afficher(){
-        System.out.println("Nom : " + this.nom + "\nHealth Point : " + this.hp + "\nPoint d'attaque : " + this.atk);
+        System.out.println("Nom : " + this.nom + "\nHealthPoint : " + this.hp + "\nAttackPoint : " + this.atk + "\nVivant : " + !this.isDead());
     }
     
     //IMPLEMENTATION DES METHODES ATTAQUER AVEC SURCHARGE
     //ATTAQUER UN POKEMON_NORMAL
     public void attaquer(Pokemon poke) {
         poke.hp -= this.atk * 0.5;
+        if (poke.getHp() <= 0) {
+            poke.setHp(0);
+        }
     }
     
     //ATTAQUER UN POKEMON_FEU
     public void attaquer(PokemonFeu pokeFeu) {
         pokeFeu.hp -= this.atk;
+        if (pokeFeu.getHp() <= 0) {
+            pokeFeu.setHp(0);
+        }
     }
     
     //ATTAQUER UN POKEMON_EAU
     public void attaquer(PokemonEau pokeEau) {
         pokeEau.hp -= this.atk;
+        if (pokeEau.getHp() <= 0) {
+            pokeEau.setHp(0);
+        }
     }
     
     //ATTAQUER UN POKEMON_PLANTE
     public void attaquer(PokemonPlante pokePlante) {
         pokePlante.hp -= this.atk;
+        if (pokePlante.getHp() <= 0) {
+            pokePlante.setHp(0);
+        }
     }
 }
