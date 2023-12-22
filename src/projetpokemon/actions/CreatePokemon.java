@@ -19,7 +19,7 @@ public class CreatePokemon {
             System.out.println(" ");
             System.out.println("\t\t\t| NOM\t\t| TYPE\t\t| HEALTH POINTS\t| ATTACK POINTS\t|");
             System.out.println("\t\t\t=================================================================");
-            for (Pokemon p : ProjetPokemon.listDesPokemons) {
+            for (PokemonPrincipal p : ProjetPokemon.listDesPokemons) {
                 System.out.printf("\t\t\t| %-14s| %-14s| %-14s| %-14s|%n", p.getNom(), p.getType(), p.getHp(),
                         p.getAtk());
             }

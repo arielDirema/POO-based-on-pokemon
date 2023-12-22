@@ -8,7 +8,7 @@ package projetpokemon.cpts;
  *
  * @author hp
  */
-public class PokemonPlante extends Pokemon {
+public class PokemonPlante extends PokemonPrincipal {
     // CONSTRUCTEURS
     public PokemonPlante() {
 
@@ -18,29 +18,40 @@ public class PokemonPlante extends Pokemon {
         super(_nom, _hp, _atk, _type);
     }
 
-    // IMPLEMENTATION DES METHODES ATTAQUER
-
+    // IMPLEMENTATION DES METHODES ATTAQUER AVEC SURCHARGE
+    // ATTAQUER UN POKEMON_NORMAL
+    @Override
     public void attaquer(Pokemon poke) {
-        if (poke instanceof Pokemon) {
-            poke.hp -= this.atk;
-            if (poke.getHp() <= 0) {
-                poke.setHp(0);
-            }
-        } else if (poke instanceof PokemonFeu) {
-            poke.hp -= this.atk * 0.5;
-            if (poke.getHp() <= 0) {
-                poke.setHp(0);
-            }
-        } else if (poke instanceof PokemonEau) {
-            poke.hp -= this.atk * 2;
-            if (poke.getHp() <= 0) {
-                poke.setHp(0);
-            }
-        } else if (poke instanceof PokemonPlante) {
-            poke.hp -= this.atk * 0.5;
-            if (poke.getHp() <= 0) {
-                poke.setHp(0);
-            }
+        poke.hp -= this.atk;
+        if (poke.getHp() <= 0) {
+            poke.setHp(0);
+        }
+    }
+
+    // ATTAQUER UN POKEMON_FEU
+    @Override
+    public void attaquer(PokemonFeu poke) {
+        poke.hp -= this.atk * 0.5;
+        if (poke.getHp() <= 0) {
+            poke.setHp(0);
+        }
+    }
+
+    // ATTAQUER UN POKEMON_EAU
+    @Override
+    public void attaquer(PokemonEau poke) {
+        poke.hp -= this.atk * 2;
+        if (poke.getHp() <= 0) {
+            poke.setHp(0);
+        }
+    }
+
+    // ATTAQUER UN POKEMON_PLANTE
+    @Override
+    public void attaquer(PokemonPlante poke) {
+        poke.hp -= this.atk * 0.5;
+        if (poke.getHp() <= 0) {
+            poke.setHp(0);
         }
     }
 }

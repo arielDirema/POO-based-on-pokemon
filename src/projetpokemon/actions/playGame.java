@@ -6,6 +6,10 @@ import static projetpokemon.main.ProjetPokemon.menu;
 import java.util.Scanner;
 
 import projetpokemon.cpts.Pokemon;
+import projetpokemon.cpts.PokemonEau;
+import projetpokemon.cpts.PokemonFeu;
+import projetpokemon.cpts.PokemonPlante;
+import projetpokemon.cpts.PokemonPrincipal;
 import projetpokemon.main.ProjetPokemon;
 
 public class playGame {
@@ -52,7 +56,26 @@ public class playGame {
                     "\t\t\t\t############### " + trouverPokemon(nomAttaquant).getNom().toUpperCase() + " ATTAQUE "
                             + trouverPokemon(nomAttaque).getNom().toUpperCase() + "  ###############");
 
-            trouverPokemon(nomAttaquant).attaquer(trouverPokemon(nomAttaque));
+            // trouverPokemon(nomAttaquant).attaquer(trouverPokemon(nomAttaque));
+
+            switch (trouverPokemon(nomAttaque).getType()) {
+                case "GENERAL":
+                    Pokemon p = (Pokemon) trouverPokemon(nomAttaque);
+                    trouverPokemon(nomAttaquant).attaquer(p);
+                    break;
+                case "FEU":
+                    PokemonFeu pf = (PokemonFeu) trouverPokemon(nomAttaque);
+                    trouverPokemon(nomAttaquant).attaquer(pf);
+                    break;
+                case "EAU":
+                    PokemonEau pe = (PokemonEau) trouverPokemon(nomAttaque);
+                    trouverPokemon(nomAttaquant).attaquer(pe);
+                    break;
+                case "PLANTE":
+                    PokemonPlante pp = (PokemonPlante) trouverPokemon(nomAttaque);
+                    trouverPokemon(nomAttaquant).attaquer(pp);
+                    break;
+            }
 
             System.out.println(" ");
             System.out.println("\t\t\t\t#######  STAT DES COMBATTANTS APRES ATTAQUE  #######");
@@ -74,14 +97,15 @@ public class playGame {
     }
 
     // METHODE PERMETTANT DE RENVOYER UN POKEMON A PARTIR DE SON NOM
-    public static Pokemon trouverPokemon(String nom) {
-        for (Pokemon p : ProjetPokemon.listDesPokemons) {
+    public static PokemonPrincipal trouverPokemon(String nom) {
+        for (PokemonPrincipal p : ProjetPokemon.listDesPokemons) {
             if (p.getNom().equals(nom)) {
                 return p;
             }
         }
-        System.out.print("\\t\\t\\t\\t##########  ENTREZ DES NOMS DE POKEMON VALABLES  ##########");
+        System.out.print("\t\t\t\t##########  ENTREZ DES NOMS DE POKEMON VALABLES  ##########");
         attaquerPokemon();
         return null;
     }
+
 }
