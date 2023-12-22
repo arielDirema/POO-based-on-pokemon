@@ -52,6 +52,7 @@ public class Pokemon {
     
     //METHODE AFFICHER
     public void afficher(){
+        System.out.println("\uD83D\uDC39");
         System.out.println("Nom : " + this.nom + "\nHealthPoint : " + this.hp + "\nAttackPoint : " + this.atk + "\nVivant : " + !this.isDead());
     }
     
